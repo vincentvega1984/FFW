@@ -1,0 +1,29 @@
+.tabcontent{
+    background-color: $color-1;
+    padding: 30px;
+    border: 2px solid $color-7;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    width: 100%;
+    position: relative;
+
+    .tabcontent__heading{
+        display: inline-block;
+        position: absolute;
+        left: 8px;
+        top: -4rem;
+        line-height: 4rem;
+        margin: 0;
+        @include tablet{
+            width: 100%;
+            top: -8rem;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        };
+    }
+}

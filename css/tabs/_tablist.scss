@@ -1,0 +1,35 @@
+.tablist{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 10px;
+
+        @include tablet{
+            flex-wrap: wrap;
+            justify-content: center;
+        };
+
+        .tablist__tab{
+        text-transform: uppercase;
+        font-size:.8rem;
+        font-weight: 700;
+        line-height: 4rem;
+        margin-left: 10px;
+        color: $color-9;
+        cursor: pointer;
+        background: none;
+        border: none;
+        padding: 0;
+        outline: none;
+        white-space: nowrap;
+            &[aria-selected="true"]{
+                color: $color-8;
+                cursor: default;
+            }
+            @include tablet{
+                margin: 0;
+                padding: 0 15px;
+                line-height: 5rem;
+            };
+        } 
+}

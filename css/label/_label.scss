@@ -1,0 +1,124 @@
+.label{
+    position: relative;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.label__info{
+    display: flex;
+    @include mobile{
+        flex-direction: column;
+    };
+}
+
+.label__text{
+    display: block;
+    font-size: 1.2rem;
+    line-height: 1.8rem; 
+    color: $color-2;
+    font-weight: 500;
+    position: relative;
+    padding-left: 20px;
+        &:before{
+            content:'';
+            width: 10px;
+            height: 10px;
+            display: block;
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+            background: $color-6;
+            position: absolute;
+            top: 9px;
+            left: 0;
+        }
+        @include mobile{
+            margin: 20px 0;
+        };
+}
+
+.label__input-radio{
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+.label__checkmark{
+    border: 6px solid $color-1;
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+    box-shadow: 0 0 0 1px hsl(0, 0%, 0%);
+    color: rgba(255,255,255,.7);
+    font-size: 3rem;
+    font-weight: 700;
+    align-items: flex-end;
+    line-height: 1;
+    display: flex;
+    width: $checkmark-min-width;
+    height: $checkmark-min-width;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: auto;
+    margin: 0 30px 0 0;
+    padding: 15px;
+        @include mobile{
+            margin: 0 auto;
+        };
+}
+
+.label__input-radio:checked + .label__info{
+    opacity: .5;
+}
+
+/*Specific styles for label block*/
+
+.label_merri{
+    .label__info{
+        display: block;
+        @include tablet{
+            display: flex;
+        };
+    }
+
+    .label__checkmark{
+        width: $checkmark-max-width;
+        height: $checkmark-max-width;
+        background-color: $color-5;
+        font-size: 5rem;
+        padding: 20px;
+        float: none;
+            @include tablet{
+                font-size: 3rem;
+                padding: 15px;
+                height: $checkmark-min-width;
+                width: $checkmark-min-width;
+                flex: 0 0 $checkmark-min-width;
+            };
+    }
+
+    .label__text{
+        margin: 30px 0 0;
+        padding-right: 60%;
+        @include tablet{
+            margin: 0;
+            padding: 0 0 0 20px;
+        };
+        @include mobile{
+            margin: 20px 0;
+        };
+    }
+} 
+
+.label_noto .label__checkmark{
+    background-color: $color-3;
+}
+
+.label_roboto .label__checkmark{
+    background-color: $color-4;
+}
